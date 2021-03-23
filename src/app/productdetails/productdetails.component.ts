@@ -16,9 +16,13 @@ export class ProductdetailsComponent implements OnInit {
   productId: String;
   selectedproduct: any;
   cartcount: number;
+  products: any;
+  total:number = 0;
 
   constructor(private activatedRoute: ActivatedRoute, private productService: ProductService,
-    private router: Router, private ref: ChangeDetectorRef) { }
+    private router: Router, private ref: ChangeDetectorRef) {
+      this.products = this.productService.getproductlist;
+     }
 
   ngOnInit() {
     console.log("nowthis", this.selectedProduct);
@@ -34,6 +38,8 @@ export class ProductdetailsComponent implements OnInit {
         this.selectedproduct = this.productlist[i]
       }           
     }*/
+
+    
   }
 
   add(pid){
@@ -42,7 +48,7 @@ export class ProductdetailsComponent implements OnInit {
       if(this.products[i].product_id === pid)
       {  
         this.products[i].product_quality += 1;
-      }           
+      }
     }
     this.totalPrice();
     console.log(this.products);
@@ -58,6 +64,13 @@ export class ProductdetailsComponent implements OnInit {
     }
     this.totalPrice();
     console.log(this.products);
+  }
+
+  totalPrice(){
+    this.total = 0;
+    for(var i=0;i<this.products.length;i++){
+      this.total += (this.products[i].product_price * this.products[i].product_quality);
+    }
   }
 
   addtocrt(){

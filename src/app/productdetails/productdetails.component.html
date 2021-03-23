@@ -15,9 +15,9 @@
               <p><span><strong>{{selectedproduct.product_name}}</strong></span></p>
               <p><strong><span><strong>Price</strong></span>- ${{selectedproduct.product_price}}</strong></p>
               <p class="prd-detail"><strong><span>Details:</span></strong> <br /> {{selectedproduct.product_details}}</p>  
-              <p><button class="btn btn-success btn-xs plus" (click)="add(list.product_id)"> + </button> &nbsp;
-                <span class="itemcount">{{itemquantity}} </span> &nbsp;
-                <button class="btn btn-danger btn-xs minus" (click)="del(list.product_id)"> - </button>
+              <p><button class="btn btn-success btn-xs plus" (click)="add(selectedproduct.product_id)"> + </button> &nbsp;
+                <!-- <span class="itemcount">{{itemquantity}} </span> &nbsp; -->
+                <button class="btn btn-danger btn-xs minus" (click)="del(selectedproduct.product_id)"> - </button>
               </p>
               <button (click)="addtocrt()">Add to cart</button>
             </div>
