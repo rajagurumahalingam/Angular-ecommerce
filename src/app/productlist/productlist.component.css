@@ -1,0 +1,19 @@
+
+.table > tbody > tr > td {
+    vertical-align: middle;
+}
+.backimg{
+background-image: url(https://previews.123rf.com/images/sompongtom/sompongtom1902/sompongtom190200016/118126969-online-shopping-cart-e-commerce-the-supermarket-on-a-blue-background.jpg);
+}
+th{
+    text-align-last: center;
+}
+.modal-dialog {
+    max-width: 60%;
+}
+.itemcount{
+    background-color: #ffc107;
+    color: #000;
+    padding: 2px 25px;
+    border-radius: 7px;
+}

@@ -1,0 +1,21 @@
+﻿<!-- nav -->
+<nav class="navbar navbar-dark bg-dark" *ngIf="user">
+    <div class="navbar-nav">
+        <li><a class="nav-item nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a></li>
+        <li><a class="nav-item nav-link" routerLink="/users" routerLinkActive="active">Users</a></li>
+        <li><a class="nav-item nav-link" routerLink="/products" routerLinkActive="active">Products</a></li>
+        <li><a class="nav-item nav-link" (click)="logout()">Logout</a></li>
+    </div>
+    <div class="cart-sec" routerLink="/cart">Cart <span>({{cartListCount}})</span></div>
+</nav>
+
+<!-- main app container -->
+<div class="app-container" [ngClass]="{ 'bg-light': user }">
+    <div style="padding: 0 2em;">
+        <router-outlet></router-outlet>
+    </div>
+</div>
+
+<div class="footer">
+    <p>Copyright 1990-2020 by Data. All Rights Reserved.</p>
+</div>

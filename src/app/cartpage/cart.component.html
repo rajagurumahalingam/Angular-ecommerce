@@ -1,0 +1,12 @@
+    <div class="container-fluid" *ngIf="cartItems">
+        <h1>{{title}}</h1>
+        <p *ngIf="notavailableflag">{{notavailabletxt}}</p>
+        <div class="row">            
+            <div class="col-md-3 offset-1 text-center product-cont" *ngFor="let lis of cartItems">
+                <p><img [src]="lis.product_img" style="height:100px;" /></p>
+                <p>{{lis.product_name}}</p>
+                <p><button (click)="removeitem(lis.product_id)">Delete Item</button></p>
+            </div>
+        </div>
+    </div>
+    
